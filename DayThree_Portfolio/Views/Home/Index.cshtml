@@ -1,0 +1,606 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Eli's Portfolio</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/stylish-portfolio.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Scripts/SyntaxHighlighter/styles/shCoreEclipse.css" rel="stylesheet" />
+    <link href="~/Scripts/SyntaxHighlighter/styles/shThemeEclipse.css" rel="stylesheet" />
+
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .modal {
+            background-color: lightblue;
+            background-color: rgba(204, 255, 255, 0.4)
+        }
+
+        .modal-content {
+            background-color: #c3ecef;
+        }
+
+        .modal-footer {
+            padding-bottom: 10px;
+            background-color: white;
+        }
+
+        .modal-header {
+            background-color: white;
+        }
+
+        .callout {
+            display: table;
+            background-size: 100%;
+            width: 100%;         
+            height: 400px;
+            color: #fff;
+            background: url(../img/Callout-new.png) no-repeat center center scroll;
+            /*background: url(../img/Callout-new.png);*/
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top" onclick=$("#menu-close").click();>Eli N. Frazier</a>
+            </li>
+            <li>
+                <a href="#top" onclick=$("#menu-close").click();>Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Eli N. Frazier</h1>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">About Me</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Welcome to my digtal portfolio!</h2>
+                    <p class="lead">Here you can view some of the work I've done</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside id="portfolio" class="callout">
+        <div class="text-vertical-center">
+            <h1>My Portfolio</h1>
+        </div>
+    </aside>
+
+    <!-- Portfolio -->
+    <section class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#" data-toggle="modal" data-target="#ModalMath">
+                                    <img class="img-portfolio img-responsive" src="~/img/port1.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#" data-toggle="modal" data-target="#ModalFactorial">
+                                    <img class="img-portfolio img-responsive" src="~/img/port2.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#" data-toggle="modal" data-target="#ModalPalindrome">
+                                    <img class="img-portfolio img-responsive" src="~/img/port3.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#" data-toggle="modal" data-target="#ModalFizzBuzz">
+                                    <img class="img-portfolio img-responsive" src="~/img/port4.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4>
+                        <strong>Eli N. Frazier</strong>
+                    </h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (336) 425-5256</li>
+                        <li>
+                            <i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:eli_frazier@yahoo.com">eli_frazier@yahoo.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/EliFrazier125"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Eli-Frazier"><i class="fa fa-github-alt fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Eli Frazier 2018</p>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+    <!-- ModalMath -->
+    <div id="ModalMath" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1>Math Madness</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">Enter number 1</div>
+                                <div class="col-md-6">
+                                    <input id="num1" type="number" class="form-control" />
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Enter number 2</div>
+                                <div class="col-md-6">
+                                    <input id="num2" type="number" class="form-control" />
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Enter number 3</div>
+                                <div class="col-md-6">
+                                    <input id="num3" type="number" class="form-control" />
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Enter number 4</div>
+                                <div class="col-md-6">
+                                    <input id="num4" type="number" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Enter number 5</div>
+                                <div class="col-md-6">
+                                    <input id="num5" type="number" class="form-control" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button id="btnCalc" type="button" class="btn btn-primary">Calculate</button>
+                                </div>
+                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                    Toggle Code
+                                </div>
+                                <div class="col-md-2">
+                                    <i id="toggleMath" class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center" style="padding-top: 15px">
+                            <div class="row">
+                                <p id="output1"></p>
+                            </div>
+                            <div class="row">
+                                <p id="output2"></p>
+                            </div>
+                            <div class="row">
+                                <p id="output3"></p>
+                            </div>
+                            <div class="row">
+                                <p id="output4"></p>
+                            </div>
+                            <div class="row">
+                                <p id="output5"></p>
+                            </div>
+                        </div>
+                    
+                        <br />
+
+                        <div id="codeMath" class="row">
+                            <div class="col-md-12">
+                                <pre class="brush: js">
+                                     $("#btnCalc").click(function () {
+                                        //gain user input from input boxes
+                                        var num1 = Number($("#num1").val());
+                                        var num2 = Number($("#num2").val());
+                                        var num3 = Number($("#num3").val());
+                                        var num4 = Number($("#num4").val());
+                                        var num5 = Number($("#num5").val());
+
+                                        //perform calculations
+                                        var sum = num1 + num2 + num3 + num4 + num5
+                                        var min = Math.min(num1, num2, num3, num4, num5);
+                                        var max = Math.max(num1, num2, num3, num4, num5);
+                                        var mean = sum / 5
+                                        var product = num1 * num2 * num3 * num4 * num5
+
+                                        //show the output from the calculations
+                                        $("#output1").html("the <b> sum </b> of your numbers is <b>" + sum + "</b>")
+                                        $("#output2").html("the <b> mean </b> of your numbers is <b>" + mean + "</b>")
+                                        $("#output3").html("the <b> product </b> of your numbers is <b>" + product + "</b>")
+                                        $("#output4").html("the <b> maximum </b> of your numbers is <b>" + max + "</b>")
+                                        $("#output5").html("the <b> minimum </b> of your numbers is <b>" + min + "</b>")
+                                     });
+                                </pre>
+                            </div>                          
+                        </div>                    
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ModalFactorial -->
+    <div id="ModalFactorial" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1>Factorial Frenzy</h1>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">Please enter your number</div>
+                                <div class="col-md-6"> <input id="numfac" type="number" class="form-control" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button id="btnFac" type="button" class="btn btn-primary">Show Factorial</button>
+                                </div>
+                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                    Toggle Code
+                                </div>
+                                <div class="col-md-2">
+                                    <i id="toggleFac" class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col=md-6 text-center">
+                            <div class="row" style="padding-top: 10px">
+                                <p id="outputfac"></p>
+                            </div>
+                        </div>
+                        <div id="codeFac" class="row">
+                            <div class="col-md-12">
+                                <pre class="brush: js">
+                                      $("#btnFac").click(function () {
+                                            //gain user input
+                                            var usernum = $("#numfac").val();
+
+                                            //do the math to find the factorial
+                                            var numFac = usernum;
+                                            for (var loop = usernum - 1; loop >= 1; loop--) {
+                                                numFac = numFac *= loop;
+                                            }
+
+                                            //output the factorial
+                                            $("#outputfac").html("the factorial of <b> " + usernum + "</b> is <b>" + numFac + "</b>");
+                                        });
+                            </pre>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ModalPalindrome -->
+    <div id="ModalPalindrome" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1>Palindrome Panic</h1>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">Enter a word</div>
+                                <div class="col-md-6"><input id="word1" type="text" class="form-control" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button id="btnPalindrome" type="button" class="btn btn-primary">Click Here</button>
+                                </div>
+                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                    Toggle Code
+                                </div>
+                                <div class="col-md-2">
+                                    <i id="togglePal" class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="row" style="padding-top: 10px">
+                                <p id="outputpal"></p>
+                            </div>
+                        </div>
+                        <div id="codePal" class="row">
+                            <div class="col-md-12">
+                                <pre class="brush: js">
+                                    $("#btnPalindrome").click(function () {
+                                        var userword = $("#word1").val();
+
+                                        revword = userword.split("").reverse().join("");
+
+                                        if (userword.toUpperCase() === revword.toUpperCase()) {
+                                            $("#outputpal").html("<b>" + userword + "</b> is a palindrome");
+                                        }
+                                        else {
+                                            $("#outputpal").html("<b>" + userword + "</b> is not a palindrome");
+                                        }
+                                    });
+                            </pre>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ModalFizzBuzz -->
+    <div id="ModalFizzBuzz" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1>FizzBuzz</h1>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">Please enter a number</div>
+                                <div class="col-md-6"> <input id="numFB" type="number" class="form-control" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button id="btnFB" type="button" class="btn btn-primary">Fizz Buzz</button>
+                                </div>
+                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                    Toggle Code
+                                </div>
+                                <div class="col-md-2">
+                                    <i class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col=md-6 text-center">
+                            <div class="row" style="padding-top: 10px">
+                                <p id="outputFB"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Scrolls to the selected menu item on the page
+        $(function () {
+            $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+        //#to-top button appears after scrolling
+        var fixed = false;
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                    // $('#to-top').css({position:'fixed', display:'block'});
+                    $('#to-top').show("slow", function () {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            } else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function () {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
+                }
+            }
+        });
+        // Disable Google Maps scrolling
+        // See http://stackoverflow.com/a/25904582/1607849
+        // Disable scroll zooming and bind back the click event
+        var onMapMouseleaveHandler = function (event) {
+            var that = $(this);
+            that.on('click', onMapClickHandler);
+            that.off('mouseleave', onMapMouseleaveHandler);
+            that.find('iframe').css("pointer-events", "none");
+        }
+        var onMapClickHandler = function (event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+        $('.map').on('click', onMapClickHandler);</script>
+
+    <!-- JSExersicises script-->
+    <script src="~/Scripts/JSExcercises.js"></script>
+
+    <!--Syntax Highlighter-->
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+    </script>
+</body>
+</html>

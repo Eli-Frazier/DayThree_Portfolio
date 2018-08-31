@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "JSExercises";
+}
+
+<style>
+    var {
+        color: Red;
+    }
+</style>
+
+<h1>JSExercises</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 h3 text-center">Calculations Demo</div>
+    </div>
+
+    @*<div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">Please enter your first number</div>
+            <input id="num1" type="number" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-md-6">Please enter your second number</div>
+            <input id="num2" type="number" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-md-6">Please enter your third number</div>
+            <input id="num3" type="number" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-md-6">Please enter your fourth number</div>
+            <input id="num4" type="number" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-md-6">Please enter your fifth number</div>
+            <input id="num5" type="number" class="form-control" />
+        </div>
+        <div class="row">
+            <button id="btn10" type="button" class="btn btn-primary">Calculate</button>
+        </div>
+    </div>*@
+
+    @*<div class="col-md-6">
+        <div class="row">
+            <p id="output1"></p>
+        </div>
+        <div class="row">
+            <p id="output2"></p>
+        </div>
+        <div class="row">
+            <p id="output3"></p>
+        </div>
+        <div class="row">
+            <p id="output4"></p>
+        </div>
+        <div class="row">
+            <p id="output5"></p>
+        </div>
+    </div>*@
+</div>
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 h3 text-center">Factorials</div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">Enter your number</div>
+            <input id="fac" type="number" class="form-control" />
+        </div>
+        <div class="row">
+            <button id="btn2" type="button" class="btn btn-primary">Factorialize</button>
+        </div>
+    </div>
+
+    <div class"col-md-6">
+        <div class="row">
+            <p id="outputfac"></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts{
+    <script>
+        $("#btn1").click(function () {
+            //gain user input from input boxes
+            var num1 = Number($("#num1").val());
+            var num2 = Number($("#num2").val());
+            var num3 = Number($("#num3").val());
+            var num4 = Number($("#num4").val());
+            var num5 = Number($("#num5").val());
+
+            //perform calculations
+            var sum = num1 + num2 + num3 + num4 + num5
+            var min = Math.min(num1, num2, num3, num4, num5);
+            var max = Math.max(num1, num2, num3, num4, num5);
+            var mean = sum / 5
+            var product = num1 * num2 * num3 * num4 * num5
+
+            //show the output from the calculations
+            $("#output1").html("the <b> sum </b> of your numbers is <b>" + sum + "</b>")
+            $("#output2").html("the <b> mean </b> of your numbers is <b>" + mean + "</b>")
+            $("#output3").html("the <b> product </b> of your numbers is <b>" + product + "</b>")
+            $("#output4").html("the <b> maximum </b> of your numbers is <b>" + max + "</b>")
+            $("#output5").html("the <b> minimum </b> of your numbers is <b>" + min + "</b>")
+        });
+
+        $("#btn2").click(function () {
+            //gain user input from input boxes
+            var fac = Number($("#fac").val());
+
+            //perform calculations
+            var fac = function factorialize(fac) {
+                return fac;
+            }
+
+
+            //show the output from the calculations
+            $("#outputfac").html("the <b> factorial </b> of your number is <b>" + fac + "</b>")
+        });
+    </script>
+}
+
