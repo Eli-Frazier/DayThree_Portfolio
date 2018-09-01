@@ -60,6 +60,66 @@
             -moz-background-size: cover;
             -o-background-size: cover;
         }
+
+        .portfolio-item {
+            position: relative;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: lightblue;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .BoldPurple {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .BoldRed {
+            color: red;
+            font-weight: bold;
+        }
+
+        .BoldBlue {
+            color: blue;
+            font-weight: bold;
+        }
+
+        #outputFB {
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: larger;
+        }
     </style>
 </head>
 <body>
@@ -126,20 +186,35 @@
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalMath">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <i class="fa fa-plus fa-3x">Math Madness</i>
+                                        </div>
+                                    </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port1.png">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="portfolio-item">
+                            <div class="portfolio-item">                                
                                 <a href="#" data-toggle="modal" data-target="#ModalFactorial">
-                                    <img class="img-portfolio img-responsive" src="~/img/port2.png">
-                                </a>
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <i class="fa fa-plus fa-3x">Factorial Frenzy</i>
+                                        </div>
+                                    </div>
+                                    <img class="image img-portfolio img-responsive" src="~/img/port2.png">
+                                </a>                                                               
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalPalindrome">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <i class="fa fa-plus fa-3x">Palindrome Panic</i>
+                                        </div>
+                                    </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port3.png">
                                 </a>
                             </div>
@@ -147,6 +222,11 @@
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalFizzBuzz">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <i class="fa fa-plus fa-3x">FizzBuzz</i>
+                                        </div>
+                                    </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port4.png">
                                 </a>
                             </div>
@@ -177,13 +257,13 @@
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/in/eli-frazier-6bb90316b/"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/EliFrazier125"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://twitter.com/EliFrazier125"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="https://github.com/Eli-Frazier"><i class="fa fa-github-alt fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://github.com/Eli-Frazier"><i class="fa fa-github-alt fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -249,7 +329,7 @@
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
-                                    <i id="toggleMath" class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                    <i id="toggleMath" class="fa fa-toggle-off fa-align-left" style="font-size:36px;color:royalblue;"></i>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +350,7 @@
                                 <p id="output5"></p>
                             </div>
                         </div>
-                    
+
                         <br />
 
                         <div id="codeMath" class="row">
@@ -299,8 +379,8 @@
                                         $("#output5").html("the <b> minimum </b> of your numbers is <b>" + min + "</b>")
                                      });
                                 </pre>
-                            </div>                          
-                        </div>                    
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -344,7 +424,7 @@
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
-                                    <i id="toggleFac" class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                    <i id="toggleFac" class="fa fa-toggle-off fa-align-left" style="font-size:36px;color:royalblue;"></i>
                                 </div>
                             </div>
                         </div>
@@ -417,7 +497,7 @@
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
-                                    <i id="togglePal" class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                    <i id="togglePal" class="fa fa-toggle-off fa-align-left" style="font-size:36px;color:royalblue;"></i>
                                 </div>
                             </div>
                         </div>
@@ -477,8 +557,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
-                                <div class="col-md-6">Please enter a number</div>
-                                <div class="col-md-6"> <input id="numFB" type="number" class="form-control" /></div>
+                                <div class="col-md-6">Please enter a fizz number</div>
+                                <div class="col-md-6"> <input id="fizz" type="number" class="form-control" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Please enter a buzz number</div>
+                                <div class="col-md-6"> <input id="buzz" type="number" class="form-control" /></div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
@@ -488,17 +572,57 @@
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
-                                    <i class="fa fa-toggle-off fa-align-left" style="font-size:36px"></i>
+                                    <i id="toggleFB" class="fa fa-toggle-off fa-align-left" style="font-size:36px;color:royalblue;"></i>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="col=md-6 text-center">
+
+                        <div class="col=md-6">
                             <div class="row" style="padding-top: 10px">
-                                <p id="outputFB"></p>
+                                <div class="col-md-6">
+                                    <p id="outputFB"></p>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
+                    <div id="codeFB" class="row">
+                            <div class="col-md-12">
+                                <pre class="brush: js">
+                                        $("#btnFB").click(function () {
+                                            //gain user input
+                                            var fizz = $("#fizz").val();
+                                            var buzz = $("#buzz").val();
+
+                                            //generate the output (somehow)
+                                            //if a number (1-100) is a multiple of the fizz number, display fizz (loop % fizz = 0)
+                                            //elseif the number is a multiple of the buzz number, display buzz (loop % buzz = 0)
+                                            //elseif the number is a multiple of both, display fizzbuzz (loop % fiiz and buzz = 0)
+                                            //else, display the number
+                                            var outputarray = [];
+                                            for (var loop = 1; loop <= 100; loop++) {
+
+                                                if (loop % fizz === 0 && loop % buzz === 0) {
+                                                    outputarray.push("<span class='BoldPurple'>FizzBuzz</span>")
+                                                }
+                                                else if (loop % fizz === 0) {
+                                                    outputarray.push("<span class='BoldRed'>Fizz</span>")
+                                                }
+                                                else if (loop % buzz === 0) {
+                                                    outputarray.push("<span class='BoldBlue'>Buzz</span>")
+                                                }
+                                                else {
+                                                    outputarray.push(loop)
+                                                }
+                                            }
+
+                                            //output the factorial
+                                            $("#outputFB").html(outputarray.join(", "));
+                                        });
+
+                                </pre>
+                            </div>
+                    </div>            
                 </div>
 
                 <!--Footer-->
@@ -598,6 +722,8 @@
     <!--Syntax Highlighter-->
     <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
     <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         SyntaxHighlighter.all();
