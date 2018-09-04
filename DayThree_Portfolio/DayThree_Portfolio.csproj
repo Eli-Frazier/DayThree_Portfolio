@@ -169,6 +169,7 @@
     <Content Include="img\bg.jpg" />
     <Content Include="img\Callout-new.png" />
     <Content Include="img\callout.jpg" />
+    <Content Include="img\favicon.png" />
     <Content Include="img\port1.png" />
     <Content Include="img\port2.png" />
     <Content Include="img\port3.png" />

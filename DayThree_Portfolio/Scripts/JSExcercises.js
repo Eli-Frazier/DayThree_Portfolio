@@ -72,11 +72,15 @@
         }
         else {
             //do the math to find the factorial
-            var numFac = usernum;
-            for (var loop = usernum - 1; loop >= 1; loop--) {
-                numFac = numFac *= loop;
+            if (usernum === "0") {
+                var numfac = 1
             }
-
+            else {
+                var numFac = usernum;
+                for (var loop = usernum - 1; loop >= 1; loop--) {
+                    numFac = numFac *= loop;
+                }
+            }
             //output the factorial
             $("#outputfac").html("the factorial of <b> " + usernum + "</b> is <b>" + numFac + "</b>");
         }
