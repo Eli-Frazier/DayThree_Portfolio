@@ -16,7 +16,7 @@
     });
 
     $("#btnCalc").click(function () {
-//gain user input from input boxes
+            //gain user input from input boxes
             var num1 = Number($("#num1").val());
             var num2 = Number($("#num2").val());
             var num3 = Number($("#num3").val());
@@ -48,13 +48,18 @@
     $("#btnPalindrome").click(function () {
         var userword = $("#word1").val();
 
-        revword = userword.split("").reverse().join("");
-
-        if (userword.toUpperCase() === revword.toUpperCase()) {
-            $("#outputpal").html("<b>" + userword + "</b> is a palindrome");
+        if (userword === "") {
+            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
         }
         else {
-            $("#outputpal").html("<b>" + userword + "</b> is not a palindrome");
+            revword = userword.split("").reverse().join("");
+
+            if (userword.toUpperCase() === revword.toUpperCase()) {
+                $("#outputpal").html("<b>" + userword + "</b> is a palindrome");
+            }
+            else {
+                $("#outputpal").html("<b>" + userword + "</b> is not a palindrome");
+            }
         }
     });
 
@@ -62,14 +67,19 @@
         //gain user input
         var usernum = $("#numfac").val();
 
-        //do the math to find the factorial
-        var numFac = usernum;
-        for (var loop = usernum - 1; loop >= 1; loop--) {
-            numFac = numFac *= loop;
+        if (usernum === "") {
+            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
         }
+        else {
+            //do the math to find the factorial
+            var numFac = usernum;
+            for (var loop = usernum - 1; loop >= 1; loop--) {
+                numFac = numFac *= loop;
+            }
 
-        //output the factorial
-        $("#outputfac").html("the factorial of <b> " + usernum + "</b> is <b>" + numFac + "</b>");
+            //output the factorial
+            $("#outputfac").html("the factorial of <b> " + usernum + "</b> is <b>" + numFac + "</b>");
+        }
     });
 
     $("#btnFB").click(function () {
@@ -77,25 +87,30 @@
         var fizz = $("#fizz").val();
         var buzz = $("#buzz").val();
 
-        //generate the output (somehow)
-        //if a number (1-100) is a multiple of the fizz number, display fizz (loop % fizz = 0)
-        //elseif the number is a multiple of the buzz number, display buzz (loop % buzz = 0)
-        //elseif the number is a multiple of both, display fizzbuzz (loop % fiiz and buzz = 0)
-        //else, display the number
-        var outputarray = [];
-        for (var loop = 1; loop <= 100; loop++) {
+        if (fizz === "" || buzz === "") {
+            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
+        }
+        else {
+            //generate the output
+            //if a number (1-100) is a multiple of the fizz number, display fizz (loop % fizz = 0)
+            //elseif the number is a multiple of the buzz number, display buzz (loop % buzz = 0)
+            //elseif the number is a multiple of both, display fizzbuzz (loop % fiiz and buzz = 0)
+            //else, display the number
+            var outputarray = [];
+            for (var loop = 1; loop <= 100; loop++) {
 
-            if (loop % fizz === 0 && loop % buzz === 0) {
-                outputarray.push("<span class='BoldPurple'>FizzBuzz</span>")
-            }
-            else if (loop % fizz === 0) {
-                outputarray.push("<span class='BoldRed'>Fizz</span>")
-            }
-            else if (loop % buzz === 0) {
-                outputarray.push("<span class='BoldBlue'>Buzz</span>")
-            }
-            else {
-                outputarray.push(loop)
+                if (loop % fizz === 0 && loop % buzz === 0) {
+                    outputarray.push("<span class='BoldPurple'>FizzBuzz</span>")
+                }
+                else if (loop % fizz === 0) {
+                    outputarray.push("<span class='BoldRed'>Fizz</span>")
+                }
+                else if (loop % buzz === 0) {
+                    outputarray.push("<span class='BoldBlue'>Buzz</span>")
+                }
+                else {
+                    outputarray.push(loop)
+                }
             }
         }
 
