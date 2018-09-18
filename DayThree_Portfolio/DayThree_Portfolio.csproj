@@ -169,6 +169,15 @@
     <Content Include="img\bg.jpg" />
     <Content Include="img\Callout-new.png" />
     <Content Include="img\callout.jpg" />
+    <Content Include="img\ConsoleAppStuff\Capture.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture1.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture2.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture3.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture4.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture5.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture6.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture7.PNG" />
+    <Content Include="img\ConsoleAppStuff\Capture8.PNG" />
     <Content Include="img\favicon.png" />
     <Content Include="img\port1.png" />
     <Content Include="img\port2.png" />
