@@ -1,18 +1,72 @@
 ﻿$(document).ready(function () {
     $("#codeMath, #codeFac, #codePal, #codeFB").hide();
 
-    $("#close").click(function () {
+    $("#sidebar-wrapper").toggleClass("active");
+
+    $("#close1").click(function () {
         $("#output1").html("");
         $("#output2").html("");
         $("#output3").html("");
         $("#output4").html("");
         $("#output5").html("");
 
-        $("#outputpal").html("");
+        $("#num1").val("");
+        $("#num2").val("");
+        $("#num3").val("");
+        $("#num4").val("");
+        $("#num5").val("");
+    });
 
+    $("#close2").click(function () {
         $("#outputfac").html("");
 
+        $("#numfac").val("");
+    });
+
+    $("#close3").click(function () {
+        $("#outputpal").html("");
+
+        $("#word1").val("");
+    });
+
+    $("#close4").click(function () {
         $("#outputFB").html("");
+
+        $("#fizz").val("");
+        $("#buzz").val("");
+    });
+
+    $("#clearFB").click(function () {
+        $("#fizz").val("");
+        $("#buzz").val("");
+
+        $("#outputFB").html("");
+    });
+
+    $("#clearPal").click(function () {
+        $("#word1").val("");
+
+        $("#outputpal").html("");
+    });
+
+    $("#clearFac").click(function () {
+        $("#numfac").val("");
+
+        $("#outputfac").html("");
+    });
+
+    $("#clearMath").click(function () {
+        $("#num1").val("");
+        $("#num2").val("");
+        $("#num3").val("");
+        $("#num4").val("");
+        $("#num5").val("");
+
+        $("#output1").html("");
+        $("#output2").html("");
+        $("#output3").html("");
+        $("#output4").html("");
+        $("#output5").html("");
     });
 
     $("#btnCalc").click(function () {
@@ -24,7 +78,7 @@
             var num5 = Number($("#num5").val());
 
         //SweetAlert pop-up
-        if (num1 === "" || num2 === "" || num3 === "" || num4 === "" || num5 == "") {
+        if (num1 == "" || num2 == "" || num3 == "" || num4 == "" || num5 == "") {
             swal("Oh No!", "it seems you forgot to enter the data :(", "error");
         }
         else {          
@@ -65,15 +119,18 @@
 
     $("#btnFac").click(function () {
         //gain user input
-        var usernum = $("#numfac").val();
+        var usernum = Number($("#numfac").val());
 
         if (usernum === "") {
             swal("Oh No!", "it seems you forgot to enter the data :(", "error");
         }
         else {
             //do the math to find the factorial
-            if (usernum === "0") {
-                var numfac = 1
+            if (usernum == "0") {
+                var numFac = "1"
+            }
+            else if (usernum < 0) {
+                var numFac = "Undefined"
             }
             else {
                 var numFac = usernum;
@@ -91,8 +148,8 @@
         var fizz = $("#fizz").val();
         var buzz = $("#buzz").val();
 
-        if (fizz === "" || buzz === "") {
-            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
+        if (fizz === "" || buzz === "" || fizz < 0  || fizz > 100 || buzz < 0 || buzz > 100) {
+            swal("Oh No!", "There was a missing number or an invalid number :(", "error");
         }
         else {
             //generate the output

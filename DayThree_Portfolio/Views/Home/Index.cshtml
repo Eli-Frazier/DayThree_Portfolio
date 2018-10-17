@@ -1,4 +1,6 @@
-﻿@{ 
+﻿@model DayThree_Portfolio.Models.Email
+
+@{
     Layout = null;
 }
 
@@ -37,9 +39,9 @@
             background-color: rgba(204, 255, 255, 0.4)
         }
 
-        .modal-content {
+        /*.modal-content {
             background-color:  ;
-        }
+        }*/
 
         .modal-footer {
             padding-bottom: 10px;
@@ -50,18 +52,7 @@
             background-color: white;
         }
 
-        .callout {
-            display: table;
-            background-size: 100%;
-            width: 100%;         
-            height: 400px;
-            color: #fff;
-            background: url(../img/Callout-new.png) no-repeat center center scroll;
-            /*background: url(../img/Callout-new.png);*/
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-        }
+        
 
         .portfolio-item {
             position: relative;
@@ -122,6 +113,20 @@
             overflow-y: auto;
             font-size: larger;
         }
+
+        .text-vertical-center {
+            color: white;
+        }
+
+        .avatar {
+            height: 10%;
+            width: auto;
+            border-radius: 100%;
+        }
+
+        .contact, .welcome, .footer{
+            background-color:lightskyblue;
+        }
     </style>
 </head>
 <body>
@@ -145,20 +150,24 @@
             <li>
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
             </li>
+            <li>
+                <a href="https://efrazier-blog.azurewebsites.net/" target="_blank" onclick=$("#menu-close").click();>Blog</a>
+            </li>
         </ul>
     </nav>
 
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
+            <img src="~/img/Eli Frazier.jpg" class="avatar" />
             <h1>Eli N. Frazier</h1>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">About Me</a>
         </div>
     </header>
 
-    <!-- About -->
-    <section id="about" class="about">
+    <!-- Welcome -->
+    <section id="" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -171,20 +180,63 @@
         <!-- /.container -->
     </section>
 
-    <!-- Callout -->
-    <aside id="portfolio" class="callout">
-        <div class="text-vertical-center">
-            <h1>My Portfolio</h1>
+    <!--About Me-->
+    <section id="about" class="about welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About Me</h2>
+                    
+                    <p class="lead">
+                        I am a junior software developer currently at the Coder Foundry in Kernersville. I graduated from West Davidson High School in June, 2018. 
+                        I first got into coding my sophomore year of high school, when I took a webpage design class. I am now able to code in several languages,
+                        including HTML, JavaScript, and C#.
+                    </p>
+                </div>
+            </div>
+            <!-- /.row -->
         </div>
-    </aside>
+        <!-- /.container -->
+    </section>
 
     <!-- Portfolio -->
     <section class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h1>My Portfolio</h1>
                     <hr class="small">
                     <div class="row">
+                        <h2>My Featured Web Applications</h2>
+                        <hr />
+                        <div class="col-md-6">
+
+                            <div class="portfolio-item">
+                                <a href="https://efrazier-blog.azurewebsites.net" target="_blank">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <i class="fa fa-plus fa-3x">Personal Blog</i>
+                                        </div>
+                                    </div>
+                                    <img class="img-portfolio img-responsive" src="~/img/blog.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="https://bug-trackeref.azurewebsites.net/" target="_blank">
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <i class="fa fa-plus fa-3x">Bug Tracker</i>
+                                        </div>
+                                    </div>
+                                    <img class="img-portfolio img-responsive" src="~/img/bugtracker.png">
+                                </a>
+                            </div>
+                        </div>
+
+                        <h2>Javascript Exercicses</h2>
+                        <hr />
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalMath">
@@ -195,8 +247,10 @@
                                     </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port1.png">
                                 </a>
+                                This practice will deliver several calulations from any five numbers
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalFactorial">
@@ -207,8 +261,10 @@
                                     </div>
                                     <img class="image img-portfolio img-responsive" src="~/img/port2.png">
                                 </a>
+                                This practice will caculate the factorial of any number
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalPalindrome">
@@ -219,8 +275,10 @@
                                     </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port3.png">
                                 </a>
+                                This practice will calcualte if any word is palindrome or not
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#" data-toggle="modal" data-target="#ModalFizzBuzz">
@@ -231,89 +289,80 @@
                                     </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port4.png">
                                 </a>
+                                This practice will show the multiples of any two numbers from 1-100
                             </div>
                         </div>
 
-                        <div class="col-md-12">
-                            
+                        <div class="col-md-8 col-md-push-2">
+
                             @*<div class="container">*@
                             <h2>Console App Project</h2>
-                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                                        <li data-target="#myCarousel" data-slide-to="4"></li>
-                                        <li data-target="#myCarousel" data-slide-to="5"></li>
-                                        <li data-target="#myCarousel" data-slide-to="6"></li>
-                                        <li data-target="#myCarousel" data-slide-to="7"></li>
-                                        <li data-target="#myCarousel" data-slide-to="8"></li>
-                                    </ol>
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                                    <li data-target="#myCarousel" data-slide-to="6"></li>
+                                    <li data-target="#myCarousel" data-slide-to="7"></li>
+                                    <li data-target="#myCarousel" data-slide-to="8"></li>
+                                </ol>
 
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="~/img/ConsoleAppStuff/Capture.PNG" style="width:100%;"/>
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture1.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture2.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture3.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture4.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture5.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture6.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture7.PNG" style="width:100%;" />
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="~/img/ConsoleAppStuff/Capture8.PNG" style="width:100%;" />
-                                        </div>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="~/img/ConsoleAppStuff/Capture.PNG" style="width:100%;" />
                                     </div>
 
-                                    <!-- Left and right controls -->
-                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture1.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture2.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture3.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture4.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture5.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture6.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture7.PNG" style="width:100%;" />
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="~/img/ConsoleAppStuff/Capture8.PNG" style="width:100%;" />
+                                    </div>
                                 </div>
-                            @*</div>*@
-                            
-                        </div>
-                        
-                        <div class="col-md-12">
-                            <div>
-                                <br />
-                                <button type="button" class="btn btn-default btn-lg">
-                                    <a href="https://efrazier-blog.azurewebsites.net/"  target="_blank" />
-                                    Personal Blog
-                                </button>
-                                
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
+                            @*</div>*@
+
+                            <hr />
                         </div>
 
                     </div>
@@ -325,8 +374,79 @@
         <!-- /.container -->
     </section>
 
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Contact Me</h2>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h4 class="text-justify">
+                                Send me a message and I will reply as soon as I can. If you would like me to contact you in any form
+                                other than an email, please let me know in your message. Thank you!
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                
+                                <div class="form-group">
+                                    @Html.Label("Name", htmlAttributes: new { @class="control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", placeholder = "Enter your name", id = "name" })
+                                        <p class="help-block text-danger"> @Html.ValidationMessageFor(m => m.FromName)</p>
+                                    </div>
+                                    
+                                </div>
+                                
+
+                                <div class="form-group">
+                                    @Html.Label("Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", placeholder = "Enter your email address", id = "email" })
+                                        <p class="help-block text-danger"> @Html.ValidationMessageFor(m => m.FromEmail)</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Subject", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder = "Enter a subject" })
+                                        <p class="help-block text-danger"> @Html.ValidationMessageFor(m => m.Subject)</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Message", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Body, new { @class = "form-control", placeholder = "Enter your message", id = "message" })
+                                        <p class="help-block text-danger">@Html.ValidationMessageFor(m => m.Body)</p>
+                                    </div>
+                                </div>
+                                    <br>
+
+                                    
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Send" class="btn btn-default" />
+                                    </div>
+                                </div>
+                               
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -334,10 +454,7 @@
                         <strong>Eli N. Frazier</strong>
                     </h4>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (336) 425-5256</li>
-                        <li>
-                            <i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:eli_frazier@yahoo.com">eli_frazier@yahoo.com</a>
-                        </li>
+                        <li><i class="fa fa-mobile fa-fw"></i> (336) 425-5256</li>
                     </ul>
                     <br>
                     <ul class="list-inline">
@@ -370,6 +487,14 @@
                     <h1>Math Madness</h1>
                 </div>
                 <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                Enter any five numbers of your choice and this exercise will calulate the sum, mean, product, maximum, and minimum of those five numbers
+                            </h4>
+                        </div>
+                    </div>
+                    <hr />
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
@@ -410,7 +535,10 @@
                                 <div class="col-md-4">
                                     <button id="btnCalc" type="button" class="btn btn-primary">Calculate</button>
                                 </div>
-                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                <div class="col-md-4">
+                                    <button id="clearMath" type="button" class="btn btn-primary">Clear</button>
+                                </div>
+                                <div class="col-md-2 text-right" style="font-size: 15px; padding-top: 5px">
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
@@ -441,36 +569,36 @@
                         <div id="codeMath" class="row">
                             <div class="col-md-12">
                                 <pre class="brush: js">
-                                     $("#btnCalc").click(function () {
-                                            //gain user input from input boxes
-                                            var num1 = Number($("#num1").val());
-                                            var num2 = Number($("#num2").val());
-                                            var num3 = Number($("#num3").val());
-                                            var num4 = Number($("#num4").val());
-                                            var num5 = Number($("#num5").val());
+                        $("#btnCalc").click(function () {
+                            //gain user input from input boxes
+                            var num1 = Number($("#num1").val());
+                            var num2 = Number($("#num2").val());
+                            var num3 = Number($("#num3").val());
+                            var num4 = Number($("#num4").val());
+                            var num5 = Number($("#num5").val());
 
-                                        //SweetAlert pop-up
-                                        if (num1 === "" || num2 === "" || num3 === "" || num4 === "" || num5 == "") {
-                                            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
-                                        }
-                                        else {          
-                                            //perform calculations
-                                            var sum = num1 + num2 + num3 + num4 + num5
-                                            var min = Math.min(num1, num2, num3, num4, num5);
-                                            var max = Math.max(num1, num2, num3, num4, num5);
-                                            var mean = sum / 5
-                                            var product = num1 * num2 * num3 * num4 * num5
+                        //SweetAlert pop-up
+                        if (num1 === "" || num2 === "" || num3 === "" || num4 === "" || num5 == "") {
+                            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
+                        }
+                        else {          
+                            //perform calculations
+                            var sum = num1 + num2 + num3 + num4 + num5
+                            var min = Math.min(num1, num2, num3, num4, num5);
+                            var max = Math.max(num1, num2, num3, num4, num5);
+                            var mean = sum / 5
+                            var product = num1 * num2 * num3 * num4 * num5
 
-                                            //show the output from the calculations
-                                            $("#output1").html("the <b> sum </b> of your numbers is <b>" + sum + "</b>");
-                                            $("#output2").html("the <b> mean </b> of your numbers is <b>" + mean + "</b>");
-                                            $("#output3").html("the <b> product </b> of your numbers is <b>" + product + "</b>");
-                                            $("#output4").html("the <b> maximum </b> of your numbers is <b>" + max + "</b>");
-                                            $("#output5").html("the <b> minimum </b> of your numbers is <b>" + min + "</b>");
-                                        }
+                            //show the output from the calculations
+                            $("#output1").html("the <b> sum </b> of your numbers is <b>" + sum + "</b>");
+                            $("#output2").html("the <b> mean </b> of your numbers is <b>" + mean + "</b>");
+                            $("#output3").html("the <b> product </b> of your numbers is <b>" + product + "</b>");
+                            $("#output4").html("the <b> maximum </b> of your numbers is <b>" + max + "</b>");
+                            $("#output5").html("the <b> minimum </b> of your numbers is <b>" + min + "</b>");
+                        }
         
-                                    });
-                                </pre>
+                    });
+                </pre>
                             </div>
                         </div>
                     </div>
@@ -479,7 +607,7 @@
                 <div class="modal-footer">
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                            <button id="close1" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -503,6 +631,14 @@
                 <!--Body-->
                 <div class="modal-body">
                     <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                This exericse calculates the factorial of any number. A factorial is a number that is multiplied by every number under it once.
+                            </h4>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">Please enter your number</div>
@@ -512,7 +648,10 @@
                                 <div class="col-md-4">
                                     <button id="btnFac" type="button" class="btn btn-primary">Show Factorial</button>
                                 </div>
-                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                <div class="col-md-4">
+                                    <button id="clearFac" type="button" class="btn btn-primary">Clear</button>
+                                </div>
+                                <div class="col-md-2 text-right" style="font-size: 15px; padding-top: 5px">
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
@@ -528,25 +667,25 @@
                         <div id="codeFac" class="row">
                             <div class="col-md-12">
                                 <pre class="brush: js">
-                                       $("#btnFac").click(function () {
-                                            //gain user input
-                                            var usernum = $("#numfac").val();
+                        $("#btnFac").click(function () {
+                            //gain user input
+                            var usernum = $("#numfac").val();
 
-                                            if (usernum === "") {
-                                                swal("Oh No!", "it seems you forgot to enter the data :(", "error");
-                                            }
-                                            else {
-                                                //do the math to find the factorial
-                                                var numFac = usernum;
-                                                for (var loop = usernum - 1; loop >= 1; loop--) {
-                                                    numFac = numFac *= loop;
-                                                }
+                            if (usernum === "") {
+                                swal("Oh No!", "it seems you forgot to enter the data :(", "error");
+                            }
+                            else {
+                                //do the math to find the factorial
+                                var numFac = usernum;
+                                for (var loop = usernum - 1; loop >= 1; loop--) {
+                                    numFac = numFac *= loop;
+                                }
 
-                                                //output the factorial
-                                                $("#outputfac").html("the factorial of <b> " + usernum + "</b> is <b>" + numFac + "</b>");
-                                            }
-                                        });
-                            </pre>
+                                //output the factorial
+                                $("#outputfac").html("the factorial of <b> " + usernum + "</b> is <b>" + numFac + "</b>");
+                            }
+                        });
+            </pre>
                             </div>
 
                         </div>
@@ -557,7 +696,7 @@
                 <div class="modal-footer">
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                            <button id="close2" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -579,7 +718,15 @@
 
                 <!--Body-->
                 <div class="modal-body">
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                A palindrome is a word that is spelt the same forwards as it is backwards, like RADAR.
+                                This exercise will determine if any inputed word is a palindrome.
+                            </h4>
+                        </div>
+                    </div>
+                    <hr />
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
@@ -590,7 +737,10 @@
                                 <div class="col-md-4">
                                     <button id="btnPalindrome" type="button" class="btn btn-primary">Click Here</button>
                                 </div>
-                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                <div class="col-md-4">
+                                    <button id="clearPal" type="button" class="btn btn-primary">Clear</button>
+                                </div>
+                                <div class="col-md-2 text-right" style="font-size: 15px; padding-top: 5px">
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
@@ -606,24 +756,24 @@
                         <div id="codePal" class="row">
                             <div class="col-md-12">
                                 <pre class="brush: js">
-                                    $("#btnPalindrome").click(function () {
-                                        var userword = $("#word1").val();
+                                        $("#btnPalindrome").click(function () {
+                                            var userword = $("#word1").val();
 
-                                        if (userword === "") {
-                                            swal("Oh No!", "it seems you forgot to enter the data :(", "error");
-                                        }
-                                        else {
-                                            revword = userword.split("").reverse().join("");
-
-                                            if (userword.toUpperCase() === revword.toUpperCase()) {
-                                                $("#outputpal").html("<b>" + userword + "</b> is a palindrome");
+                                            if (userword === "") {
+                                                swal("Oh No!", "it seems you forgot to enter the data :(", "error");
                                             }
                                             else {
-                                                $("#outputpal").html("<b>" + userword + "</b> is not a palindrome");
+                                                revword = userword.split("").reverse().join("");
+
+                                                if (userword.toUpperCase() === revword.toUpperCase()) {
+                                                    $("#outputpal").html("<b>" + userword + "</b> is a palindrome");
+                                                }
+                                                else {
+                                                    $("#outputpal").html("<b>" + userword + "</b> is not a palindrome");
+                                                }
                                             }
-                                        }
-                                    });
-                            </pre>
+                                        });
+                                </pre>
                             </div>
 
                         </div>
@@ -634,7 +784,7 @@
                 <div class="modal-footer">
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                            <button id="close3" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -657,7 +807,19 @@
                 <!--Body-->
                 <div class="modal-body">
                     <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                This exercise shows every multiple of two number ranging from one to one-hundred.
+                                If a number is a multiple of the first number, the word FIZZ will display in place of that number and if
+                                a number is a multiple of the second number, BUZZ will display. If a number is a multiple of both numbers,
+                                FIZZBUZZ will display. You must enter two numbers between 1 and 100 for this to work.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+
                         <div class="col-md-6">
+
                             <div class="row">
                                 <div class="col-md-6">Please enter a fizz number</div>
                                 <div class="col-md-6"> <input id="fizz" type="number" class="form-control" /></div>
@@ -666,11 +828,15 @@
                                 <div class="col-md-6">Please enter a buzz number</div>
                                 <div class="col-md-6"> <input id="buzz" type="number" class="form-control" /></div>
                             </div>
+                            <br />
                             <div class="row">
                                 <div class="col-md-4">
                                     <button id="btnFB" type="button" class="btn btn-primary">Fizz Buzz</button>
                                 </div>
-                                <div class="col-md-6 text-right" style="font-size: 15px; padding-top: 5px">
+                                <div class="col-md-4">
+                                    <button id="clearFB" type="button" class="btn btn-primary">Clear</button>
+                                </div>
+                                <div class="col-md-2 text-right" style="font-size: 15px; padding-top: 5px">
                                     Toggle Code
                                 </div>
                                 <div class="col-md-2">
@@ -691,42 +857,42 @@
                     <div id="codeFB" class="row">
                         <div class="col-md-12">
                             <pre class="brush: js">
-                                       $("#btnFB").click(function () {
-                                            //gain user input
-                                            var fizz = $("#fizz").val();
-                                            var buzz = $("#buzz").val();
+                        $("#btnFB").click(function () {
+                            //gain user input
+                            var fizz = $("#fizz").val();
+                            var buzz = $("#buzz").val();
 
-                                            if (fizz === "" || buzz === "") {
-                                                swal("Oh No!", "it seems you forgot to enter the data :(", "error");
-                                            }
-                                            else {
-                                                //generate the output
-                                                //if a number (1-100) is a multiple of the fizz number, display fizz (loop % fizz = 0)
-                                                //elseif the number is a multiple of the buzz number, display buzz (loop % buzz = 0)
-                                                //elseif the number is a multiple of both, display fizzbuzz (loop % fiiz and buzz = 0)
-                                                //else, display the number
-                                                var outputarray = [];
-                                                for (var loop = 1; loop <= 100; loop++) {
+                            if (fizz === "" || buzz === "") {
+                                swal("Oh No!", "it seems you forgot to enter the data :(", "error");
+                            }
+                            else {
+                                //generate the output
+                                //if a number (1-100) is a multiple of the fizz number, display fizz (loop % fizz = 0)
+                                //elseif the number is a multiple of the buzz number, display buzz (loop % buzz = 0)
+                                //elseif the number is a multiple of both, display fizzbuzz (loop % fiiz and buzz = 0)
+                                //else, display the number
+                                var outputarray = [];
+                                for (var loop = 1; loop <= 100; loop++) {
 
-                                                    if (loop % fizz === 0 && loop % buzz === 0) {
-                                                        outputarray.push("<span class='BoldPurple'>FizzBuzz</span>")
-                                                    }
-                                                    else if (loop % fizz === 0) {
-                                                        outputarray.push("<span class='BoldRed'>Fizz</span>")
-                                                    }
-                                                    else if (loop % buzz === 0) {
-                                                        outputarray.push("<span class='BoldBlue'>Buzz</span>")
-                                                    }
-                                                    else {
-                                                        outputarray.push(loop)
-                                                    }
-                                                }
-                                            }
+                                    if (loop % fizz === 0 && loop % buzz === 0) {
+                                        outputarray.push("<span class='BoldPurple'>FizzBuzz</span>")
+                                    }
+                                    else if (loop % fizz === 0) {
+                                        outputarray.push("<span class='BoldRed'>Fizz</span>")
+                                    }
+                                    else if (loop % buzz === 0) {
+                                        outputarray.push("<span class='BoldBlue'>Buzz</span>")
+                                    }
+                                    else {
+                                        outputarray.push(loop)
+                                    }
+                                }
+                            }
 
-                                            //output the factorial
-                                            $("#outputFB").html(outputarray.join(", "));
-                                        });
-                                </pre>
+                            //output the factorial
+                            $("#outputFB").html(outputarray.join(", "));
+                        });
+                </pre>
                         </div>
                     </div>
                 </div>
@@ -735,7 +901,7 @@
                 <div class="modal-footer">
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                            <button id="close4" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -743,70 +909,7 @@
         </div>
     </div>
 
-    <!-- Modal ConsoleApp -->
-    <div id="ModalConsoleApp" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h1>Console App Project</h1>
-                </div>
-
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="container">
-                        
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="~/img/port1.png" alt="Portfolio One" >
-                                </div>
-
-                                <div class="item">
-                                    <img src="../img/port2.png" alt="Portfolio Two">
-                                </div>
-
-                                <div class="item">
-                                    <img src="../img/port3.png" alt="Portfolio Three">
-                                </div>
-                            </div>
-
-                            <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!--Footer-->
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button id="close" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- jQuery -->
     <script src="~/Scripts/jquery.js"></script>
@@ -898,6 +1001,16 @@
 
     <script>
         SyntaxHighlighter.all();
+    </script>
+
+    <script>
+        //Look for a specific piece of data and if it is there then throw the swal...
+        if("@ViewBag.Message" == "Success")
+        {
+            swal("Sent", "Your message has been sent!", "success");
+        }
+
+
     </script>
 </body>
 </html>

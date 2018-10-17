@@ -146,11 +146,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,8 +169,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\bg.jpg" />
+    <Content Include="img\blog.png" />
+    <Content Include="img\bugtracker.png" />
     <Content Include="img\Callout-new.png" />
     <Content Include="img\callout.jpg" />
+    <Content Include="img\Code-tiltshift.jpg" />
     <Content Include="img\ConsoleAppStuff\Capture.PNG" />
     <Content Include="img\ConsoleAppStuff\Capture1.PNG" />
     <Content Include="img\ConsoleAppStuff\Capture2.PNG" />
@@ -178,6 +183,7 @@
     <Content Include="img\ConsoleAppStuff\Capture6.PNG" />
     <Content Include="img\ConsoleAppStuff\Capture7.PNG" />
     <Content Include="img\ConsoleAppStuff\Capture8.PNG" />
+    <Content Include="img\Eli Frazier.jpg" />
     <Content Include="img\favicon.png" />
     <Content Include="img\port1.png" />
     <Content Include="img\port2.png" />
@@ -267,10 +273,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\GridDemo.cshtml" />
+    <Content Include="private.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
