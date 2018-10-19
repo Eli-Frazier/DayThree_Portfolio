@@ -127,6 +127,14 @@
         .contact, .welcome, .footer{
             background-color:lightskyblue;
         }
+
+        .text-white{
+            color: white;
+        }
+
+        .text-bold{
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +195,7 @@
                 <div class="col-lg-12 text-center">
                     <h2>About Me</h2>
                     
-                    <p class="lead">
+                    <p class="lead text-bold text-white">
                         I am a junior software developer currently at the Coder Foundry in Kernersville. I graduated from West Davidson High School in June, 2018. 
                         I first got into coding my sophomore year of high school, when I took a webpage design class. I am now able to code in several languages,
                         including HTML, JavaScript, and C#.
@@ -200,7 +208,7 @@
     </section>
 
     <!-- Portfolio -->
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -218,7 +226,7 @@
                                             <i class="fa fa-plus fa-3x">Personal Blog</i>
                                         </div>
                                     </div>
-                                    <img class="img-portfolio img-responsive" src="~/img/blog.png">
+                                    <img class="img-portfolio img-responsive" src="~/img/stock blog.jpg" />
                                 </a>
                             </div>
                         </div>
@@ -230,7 +238,7 @@
                                             <i class="fa fa-plus fa-3x">Bug Tracker</i>
                                         </div>
                                     </div>
-                                    <img class="img-portfolio img-responsive" src="~/img/bugtracker.png">
+                                    <img class="img-portfolio img-responsive" src="~/img/bug.jpg">
                                 </a>
                             </div>
                         </div>
@@ -247,7 +255,7 @@
                                     </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port1.png">
                                 </a>
-                                This practice will deliver several calulations from any five numbers
+                                This exercise will deliver several calculations from any five numbers
                             </div>
                         </div>
 
@@ -261,7 +269,7 @@
                                     </div>
                                     <img class="image img-portfolio img-responsive" src="~/img/port2.png">
                                 </a>
-                                This practice will caculate the factorial of any number
+                                This exercise will calculate the factorial of any number
                             </div>
                         </div>
 
@@ -275,7 +283,7 @@
                                     </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port3.png">
                                 </a>
-                                This practice will calcualte if any word is palindrome or not
+                                This exercise will calculate if any word is palindrome or not
                             </div>
                         </div>
 
@@ -289,7 +297,7 @@
                                     </div>
                                     <img class="img-portfolio img-responsive" src="~/img/port4.png">
                                 </a>
-                                This practice will show the multiples of any two numbers from 1-100
+                                This exercise will show the multiples of any two numbers from 1-100
                             </div>
                         </div>
 
@@ -315,38 +323,47 @@
                                 <div class="carousel-inner">
                                     <div class="item active">
                                         <img src="~/img/ConsoleAppStuff/Capture.PNG" style="width:100%;" />
+                                        <span>This is the starting page of the game</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture1.PNG" style="width:100%;" />
+                                        <span>This is the main menu, where you can go to any other part of the game</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture2.PNG" style="width:100%;" />
+                                        <span>These are the characters default stats on the stats page</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture3.PNG" style="width:100%;" />
+                                        <span>This is the Inventory page, where you see what items you have and interact with them as well</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture4.PNG" style="width:100%;" />
+                                        <span>This is the beginning of a fight. If you know you are too weak to fight the monster, then you can leave.</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture5.PNG" style="width:100%;" />
+                                        <span>If you choose to fight, you can run away, as long as you are faster than the monster, or fight again</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture6.PNG" style="width:100%;" />
+                                        <span>This is the main shop menu, where you can choose to sell an item or buy something from the shop</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture7.PNG" style="width:100%;" />
+                                        <span>This is the very long list of items available to buy from the shop</span>
                                     </div>
 
                                     <div class="item">
                                         <img src="~/img/ConsoleAppStuff/Capture8.PNG" style="width:100%;" />
+                                        <span>this is the menu to sell your items to the shop, if you have any items to sell</span>
                                     </div>
                                 </div>
 
@@ -390,7 +407,7 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
 
-                            @using (Html.BeginForm())
+                            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @id = "contactForm" }))
                             {
                                 @Html.AntiForgeryToken()
                                 
@@ -432,7 +449,7 @@
                                     
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Send" class="btn btn-default" />
+                                        <input id="contactBtn" type="submit" value="Send" class="btn btn-default" />
                                     </div>
                                 </div>
                                
@@ -459,17 +476,17 @@
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a target="_blank" href="https://www.linkedin.com/in/eli-frazier-6bb90316b/"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/in/eli-frazier-6bb90316b/"><i class="fa fa-linkedin fa-fw fa-3x text-white"></i></a>
                         </li>
                         <li>
-                            <a target="_blank" href="https://twitter.com/EliFrazier125"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://twitter.com/EliFrazier125"><i class="fa fa-twitter fa-fw fa-3x text-white"></i></a>
                         </li>
                         <li>
-                            <a target="_blank" href="https://github.com/Eli-Frazier"><i class="fa fa-github-alt fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://github.com/Eli-Frazier"><i class="fa fa-github-alt fa-fw fa-3x text-white"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Eli Frazier 2018</p>
+                    <p class="text-muted text-bold">Copyright &copy; Eli Frazier 2018</p>
                 </div>
             </div>
         </div>
@@ -1005,11 +1022,17 @@
 
     <script>
         //Look for a specific piece of data and if it is there then throw the swal...
-        if("@ViewBag.Message" == "Success")
+        if('@TempData["Message"]' == "Success" )
         {
             swal("Sent", "Your message has been sent!", "success");
+           
         }
+        else if ('@TempData["Message"]' == "Failure")
+        {
+            swal("Uh Oh", "Your message was not sent!", "error");
 
+        }
+        
 
     </script>
 </body>

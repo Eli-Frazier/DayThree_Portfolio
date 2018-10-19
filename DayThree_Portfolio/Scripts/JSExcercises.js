@@ -3,6 +3,10 @@
 
     $("#sidebar-wrapper").toggleClass("active");
 
+    $("contactBtn").click(function () {
+        document.getElementById("contactForm").reset();
+    });
+    
     $("#close1").click(function () {
         $("#output1").html("");
         $("#output2").html("");

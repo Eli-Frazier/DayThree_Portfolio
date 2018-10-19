@@ -170,6 +170,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="img\bg.jpg" />
     <Content Include="img\blog.png" />
+    <Content Include="img\bug.jpg" />
     <Content Include="img\bugtracker.png" />
     <Content Include="img\Callout-new.png" />
     <Content Include="img\callout.jpg" />
@@ -189,6 +190,7 @@
     <Content Include="img\port2.png" />
     <Content Include="img\port3.png" />
     <Content Include="img\port4.png" />
+    <Content Include="img\stock blog.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

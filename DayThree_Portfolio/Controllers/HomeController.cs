@@ -32,13 +32,13 @@ namespace DayThree_Portfolio.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(Email model)
+        public async Task<ActionResult> Contact(Email model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    ViewBag.Message = "";
+                    //ViewBag.Message = "";
                     var body = "<p> Email From: <bold>{0}</bold> ({1})</p> <p>Message:</p><p>{2}</p>";
                     var from = "My Website<eli_frazier@yahoo.com>";
 
@@ -51,18 +51,21 @@ namespace DayThree_Portfolio.Controllers
                     var svc = new PersonalEmail();
                     await svc.SendAsync(email);
 
-                    ViewBag.Message = "Success";
-                    ModelState.Clear();
 
-                    return View(new Email());
+                    TempData["Message"] = "Success";
+                    ModelState.Clear();
+                  
+              
                 }
                 catch (Exception ex)
                 {
+                    TempData["Message"] = "Failure";
                     Console.WriteLine(ex.Message);
                     await Task.FromResult(0);
                 }
             }
-            return View(model);
+            return RedirectToAction("Index");
+            //return View(model);
         }
     }
 }
