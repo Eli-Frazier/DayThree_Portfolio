@@ -170,7 +170,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="img\bg.jpg" />
     <Content Include="img\blog.png" />
-    <Content Include="img\bug.jpg" />
+    <Content Include="img\Bugtracker-logo.png" />
     <Content Include="img\bugtracker.png" />
     <Content Include="img\Callout-new.png" />
     <Content Include="img\callout.jpg" />
@@ -186,6 +186,8 @@
     <Content Include="img\ConsoleAppStuff\Capture8.PNG" />
     <Content Include="img\Eli Frazier.jpg" />
     <Content Include="img\favicon.png" />
+    <Content Include="img\financial-portal.jpg" />
+    <Content Include="img\money-transfer.png" />
     <Content Include="img\port1.png" />
     <Content Include="img\port2.png" />
     <Content Include="img\port3.png" />
@@ -201,7 +203,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="img\Eli Frazier.pdf" />
+    <Content Include="img\Eli Frazier FINAL.pdf" />
     <None Include="Properties\PublishProfiles\eFrazier-Portfolio - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
